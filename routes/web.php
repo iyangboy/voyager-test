@@ -15,6 +15,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/test', function () {
+    $user = \TCG\Voyager\Models\User::find(1);
+    dd($user);
+});
+
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
